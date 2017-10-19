@@ -166,8 +166,8 @@ class Command extends LineAPI {
             contentType: 13,
             contentPreview: null,
             contentMetadata: 
-            { mid: 'u236b88bf1eac2b90e848a6198152e647',
-            displayName: 'Alfath Dirk' }
+            { mid: 'ufdb348d53532a57228f045ecfaa00f8d',
+            displayName: 'Rakha' }
         }
         Object.assign(this.messages,msg);
         this._sendMessage(this.messages);
@@ -282,7 +282,7 @@ class Command extends LineAPI {
                     this._sendMessage(this.messages,'Not Found');
                 }
             } else {
-                this._sendMessage(this.messages,'Location Not Found , Maybe di dalem goa');
+                this._sendMessage(this.messages,'Location Not Found');
             }
         })
         return;
