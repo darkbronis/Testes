@@ -149,7 +149,7 @@ class Command extends LineAPI {
     }
 
     setReader() {
-        this._sendMessage(this.messages, `Setpoint... type '.recheck' for lookup !`);
+        this._sendMessage(this.messages, `cyduk time, awas tercyduk !`);
         this.removeReaderByGroup(this.messages.to);
         return;
     }
