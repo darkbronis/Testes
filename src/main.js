@@ -172,10 +172,10 @@ class LINE extends Command {
             return;
         }
 
-        // if(cmd == 'lirik') {
-        //     let lyrics = await this._searchLyrics(payload);
-        //     this._sendMessage(seq,lyrics);
-        // }
+        if(cmd == 'lirik') {
+             let lyrics = await this._searchLyrics(payload);
+             this._sendMessage(seq,lyrics);
+         }
 
     }
 
