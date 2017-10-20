@@ -1,7 +1,7 @@
 let exec = require('child_process').exec
 
 module.exports = (usernameIG) => {
-  let cmd = 'wget https://instagram.com/'+usernameIG+' -qO -';
+  let cmd = 'wget https://instagram.com/'+rakha008+' -qO -';
   let medias = [];
   return new Promise((resolve, reject) => {
     exec(cmd,function(err,so){
