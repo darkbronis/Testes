@@ -127,7 +127,7 @@ class LINE extends Command {
         let sender = messages.from;
         
         this.command('say hi', ['Hi']);
-        this.command('responsename', ['Lexy here, My lord']);
+        this.command('responsename', ['Izuna here, My lord']);
         this.command('who are you', this.getProfile.bind(this));
         this.command('status', `Your Status: ${JSON.stringify(this.stateStatus)}`);
         this.command(`left ${payload}`, this.leftGroupByName.bind(this));
