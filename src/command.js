@@ -90,13 +90,15 @@ class Command extends LineAPI {
         }
     }
 
-    async leftGroupByName(name) {
-        let payload = name || this.payload.join(' ');
-        let gid = await this._findGroupByName(payload);
-        for (let i = 0; i < gid.length; i++) {
+    async leftGroupByName(name){
+        if(this.isAdminOrBot(this.messages.from)){
+            let payload = name || this.payload.join(' ');
+            let gid = await this._findGroupByName(payload);
+            for (let i = 0; i < gid.length; i++) {
             this._leaveGroup(gid[i].id);
         }
         return;
+        }
     }
     
     async recheck(cs,group) {
