@@ -64,6 +64,31 @@ class Command extends LineAPI {
             this._sendMessage(this.messages,`You Are Not Admin`);
         }
     }
+    
+    mention(listMember) {
+        let mentionStrings = [''];
+        let mid = [''];
+        for (var i = 0; i < listMember.length; i++) {
+            mentionStrings.push('@'+listMember[i].displayName+'\n');
+            mid.push(listMember[i].mid);
+        }
+        let strings = mentionStrings.join('');
+        let member = strings.split('@').slice(1);
+        
+        let tmp = 0;
+        let memberStart = [];
+        let mentionMember = member.map((v,k) => {
+            let z = tmp += v.length + 1;
+            let end = z - 1;
+            memberStart.push(end);
+            let mentionz = `{"S":"${(isNaN(memberStart[k - 1] + 1) ? 0 : memberStart[k - 1] + 1 ) }","E":"${end}","M":"${mid[k + 1]}"}`;
+            return mentionz;
+        })
+        return {
+            names: mentionStrings.slice(1),
+            cmddata: { MENTION: `{"MENTIONEES":[${mentionMember}]}` }
+        }
+    }
 
     async leftGroupByName(name){
         if(this.isAdminOrBot(this.messages.from)){
