@@ -120,38 +120,6 @@ class LINE extends Command {
         }
     }
     
-    mention(listMember) {
-        let mentionStrings = [''];
-        let mid = [''];
-        for (var i = 0; i < listMember.length; i++) {
-            mentionStrings.push('@'+listMember[i].displayName+'\n');
-            mid.push(listMember[i].mid);
-        }
-        let strings = mentionStrings.join('');
-        let member = strings.split('@').slice(1);
-        
-        let tmp = 0;
-        let memberStart = [];
-        let mentionMember = member.map((v,k) => {
-            let z = tmp += v.length + 1;
-            let end = z - 1;
-            memberStart.push(end);
-            let mentionz = `{"S":"${(isNaN(memberStart[k - 1] + 1) ? 0 : memberStart[k - 1] + 1 ) }","E":"${end}","M":"${mid[k + 1]}"}`;
-            return mentionz;
-        })
-        return {
-            names: mentionStrings.slice(1),
-            cmddata: { MENTION: `{"MENTIONEES":[${mentionMember}]}` }
-        }
-    }
-    
-    if(txt == 'tagmember' && isAdminOrBot (seq.from)) {
-            let rec = await this._getGroup(seq.to);
-            const mentions = await this.mention(rec.members);
-   	        seq.contentMetadata = mentions.cmddata;
-            await this._sendMessage(seq,mentions.names.join(''));
-    }
-
     async textMessage(messages) {
         this.messages = messages;
         let payload = (this.messages.text !== null) ? this.messages.text.split(' ').splice(1).join(' ') : '' ;
