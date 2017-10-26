@@ -127,7 +127,7 @@ class LINE extends Command {
         let sender = messages.from;
         
         this.command('say hi', ['Hi']);
-        this.command('responsename', ['Lexy here, My lord']);
+        this.command('responsename', ['Izuna Here']);
         this.command('who are you', this.getProfile.bind(this));
         this.command('status', `Your Status: ${JSON.stringify(this.stateStatus)}`);
         this.command(`leave ${payload}`, this.leftGroupByName.bind(this));
@@ -145,12 +145,12 @@ class LINE extends Command {
         this.command(`ip ${payload}`,this.checkIP.bind(this))
         this.command(`ig ${payload}`,this.checkIG.bind(this))
         this.command(`qr ${payload}`,this.qrOpenClose.bind(this))
-        this.command(`joinqr ${payload}`,this.joinQr.bind(this));
+        this.command(`join ${payload}`,this.joinQr.bind(this));
         this.command(`spam ${payload}`,this.spamGroup.bind(this));
         this.command(`creator`,this.creator.bind(this));
        
         this.command(`pap ${payload}`,this.searchLocalImage.bind(this));
-        this.command(`.upload ${payload}`,this.prepareUpload.bind(this));
+        this.command(`upload ${payload}`,this.prepareUpload.bind(this));
         this.command(`vn ${payload}`,this.vn.bind(this));
 
         if(messages.contentType == 13) {
