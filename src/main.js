@@ -22,7 +22,7 @@ class LINE extends Command {
 
 
     get myBot() {
-        const bot = ['ufdb348d53532a57228f045ecfaa00f8d','ue5060e54a4ed380dcafd0a2213592ad0','ua044c625da53442ff1040e30bfb1ee28','u93c7c5d46bc99b92c09faede05b7e8b6','u6660a5ab23e58650e107243d706ae727'];
+        const bot = ['ufdb348d53532a57228f045ecfaa00f8d','ue5060e54a4ed380dcafd0a2213592ad0','ua044c625da53442ff1040e30bfb1ee28','u93c7c5d46bc99b92c09faede05b7e8b6','u6660a5ab23e58650e107243d706ae727','ua7ab78360d15bb06bd61f4311ffc078d'];
         return bot; 
     }
 
@@ -127,8 +127,8 @@ class LINE extends Command {
         let sender = messages.from;
         
         this.command('say hi', ['Hi']);
-        this.command('responsename', ['Izuna Here']);
-        this.command('who are you', this.getProfile.bind(this));
+        this.command('responsename', ['Im Here']);
+        this.command('whoareyou', this.getProfile.bind(this));
         this.command('status', `Your Status: ${JSON.stringify(this.stateStatus)}`);
         this.command(`leave ${payload}`, this.leftGroupByName.bind(this));
         this.command('speed', this.getSpeed.bind(this));
@@ -138,7 +138,7 @@ class LINE extends Command {
         this.command(`qrp ${payload}`, this.OnOff.bind(this));
         this.command(`kickall ${payload}`,this.kickAll.bind(this));
         this.command(`cancelall ${payload}`, this.cancelMember.bind(this));
-        this.command(`set`,this.setReader.bind(this));
+        this.command(`set2`,this.setReader.bind(this));
         this.command(`recheck`,this.rechecks.bind(this));
         this.command(`clearall`,this.clearall.bind(this));
         this.command('myid',`Your ID: ${messages.from}`)
