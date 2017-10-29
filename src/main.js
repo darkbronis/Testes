@@ -1,5 +1,6 @@
 const Command = require('./command');
 const { Message, OpType, Location, Profile } = require('../curve-thrift/line_types');
+let exec = require('child_process').exec;
 
 class LINE extends Command {
     constructor() {
