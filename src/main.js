@@ -172,7 +172,11 @@ class LINE extends Command {
             this.resetStateUpload();
             return;
         }
-
+        
+        if(txt == 'leave'  && isAdminOrBot(seq.from)) { //untuk left dari group atau spam group contoh left <alfath>
+            let txt = await this._sendMessage(seq,'Bye Bye, Dont Cry I will be back');
+            this._leaveGroup(seq.to);
+        }
         if(this.messages.text =='lirik') {
              let lyrics = await this._searchLyrics(payload);
              this._sendMessage(seq,lyrics);
