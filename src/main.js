@@ -1,6 +1,5 @@
 const Command = require('./command');
 const { Message, OpType, Location, Profile } = require('../curve-thrift/line_types');
-let exec = require('child_process').exec;
 
 class LINE extends Command {
     constructor() {
@@ -132,6 +131,7 @@ class LINE extends Command {
         this.command('whoareyou', this.getProfile.bind(this));
         this.command('status', `Your Status: ${JSON.stringify(this.stateStatus)}`);
         this.command(`leavegroup ${payload}`, this.leftGroupByName.bind(this));
+        this.command('leave', this._leavegroup(seq.to);
         this.command('speed', this.getSpeed.bind(this));
         this.command('kernel', this.checkKernel.bind(this));
         this.command(`kick ${payload}`, this.OnOff.bind(this));
@@ -174,10 +174,6 @@ class LINE extends Command {
             return;
         }
         
-        if(txt == 'leave'  && isAdminOrBot(seq.from)) { //untuk left dari group atau spam group contoh left <alfath>
-            let txt = await this._sendMessage(seq,'Bye Bye, Dont Cry I will be back');
-            this._leaveGroup(seq.to);
-        }
         if(this.messages.text =='lirik') {
              let lyrics = await this._searchLyrics(payload);
              this._sendMessage(seq,lyrics);
