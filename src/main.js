@@ -138,7 +138,7 @@ class LINE extends Command {
         this.command(`qrp ${payload}`, this.OnOff.bind(this));
         this.command(`kickall ${payload}`,this.kickAll.bind(this));
         this.command(`cancelall ${payload}`, this.cancelMember.bind(this));
-        this.command(`set2`,this.setReader.bind(this));
+        this.command(`set3`,this.setReader.bind(this));
         this.command(`recheck`,this.rechecks.bind(this));
         this.command(`clearall`,this.clearall.bind(this));
         this.command('myid',`Your ID: ${messages.from}`)
