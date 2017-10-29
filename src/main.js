@@ -131,7 +131,6 @@ class LINE extends Command {
         this.command('whoareyou', this.getProfile.bind(this));
         this.command('status', `Your Status: ${JSON.stringify(this.stateStatus)}`);
         this.command(`leavegroup ${payload}`, this.leftGroupByName.bind(this));
-        this.command('leave', this._leavegroup(seq.to);
         this.command('speed', this.getSpeed.bind(this));
         this.command('kernel', this.checkKernel.bind(this));
         this.command(`kick ${payload}`, this.OnOff.bind(this));
