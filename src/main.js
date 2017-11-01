@@ -22,7 +22,7 @@ class LINE extends Command {
 
 
     get myBot() {
-        const bot = ['ufdb348d53532a57228f045ecfaa00f8d','ue5060e54a4ed380dcafd0a2213592ad0','ua044c625da53442ff1040e30bfb1ee28','u93c7c5d46bc99b92c09faede05b7e8b6','u6660a5ab23e58650e107243d706ae727','ua7ab78360d15bb06bd61f4311ffc078d'];
+        const bot = ['ufdb348d53532a57228f045ecfaa00f8d','ue5060e54a4ed380dcafd0a2213592ad0','ua044c625da53442ff1040e30bfb1ee28','u93c7c5d46bc99b92c09faede05b7e8b6','u6660a5ab23e58650e107243d706ae727','ua7ab78360d15bb06bd61f4311ffc078d','u0db0acb862af364edda273a975ee589b'];
         return bot; 
     }
 
@@ -127,10 +127,10 @@ class LINE extends Command {
         let sender = messages.from;
         
         this.command('say hi', ['Hi']);
-        this.command('responsename', ['Im Here']);
+        this.command('Absen', ['Im Here, Aizen-Sama']);
         this.command('whoareyou', this.getProfile.bind(this));
         this.command('status', `Your Status: ${JSON.stringify(this.stateStatus)}`);
-        this.command(`leavegroup ${payload}`, this.leftGroupByName.bind(this));
+        this.command(`team1leave ${payload}`, this.leftGroupByName.bind(this));
         this.command('speed', this.getSpeed.bind(this));
         this.command('kernel', this.checkKernel.bind(this));
         this.command(`kick ${payload}`, this.OnOff.bind(this));
